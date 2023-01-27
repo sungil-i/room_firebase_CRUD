@@ -9,7 +9,7 @@ import kr.sungil.roomfirebasecrud.models.BookDTO
 @Database(entities = [BookDTO::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
 	abstract fun bookDao(): BookDAO
-	abstract fun movieDao(): BookDAO
+	abstract fun movieDao(): MovieDAO
 }
 
 fun getAppDatabase(context: Context): AppDatabase {

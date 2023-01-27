@@ -13,5 +13,8 @@ class Room2Fragment : Fragment(R.layout.fragment_room2) {
 		super.onViewCreated(view, savedInstanceState)
 		val _binding = FragmentRoom2Binding.bind(view)
 		binding = _binding
+
 	}
+
+
 }

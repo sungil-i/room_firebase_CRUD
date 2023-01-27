@@ -21,6 +21,17 @@ class MainActivity : AppCompatActivity() {
 
 		// 기본 Fragment 설정
 		replaceFragment(room1Fragment)
+
+		// Bottom Navigation 메뉴를 클릭 했을 때 해당 Fragment 로 연결
+		binding.btnvMenu.setOnItemSelectedListener {
+			when (it.itemId) {
+				R.id.room_1 -> replaceFragment(room1Fragment)
+				R.id.room_2 -> replaceFragment(room2Fragment)
+				R.id.firebase_1 -> replaceFragment(firebase1Fragment)
+				R.id.firebase_2 -> replaceFragment(firebase2Fragment)
+			}
+			true
+		}
 	}
 
 	private fun replaceFragment(fragment: Fragment) {

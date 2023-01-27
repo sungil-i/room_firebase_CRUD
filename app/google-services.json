@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "379660960905",
+    "firebase_url": "https://sungil-crud-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "sungil-crud",
+    "storage_bucket": "sungil-crud.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:379660960905:android:bedef94db9af8947dcb258",
+        "android_client_info": {
+          "package_name": "kr.sungil.roomfirebasecrud"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "379660960905-7s9aeknhhk4tvg2es04nvv0pd8n8j50l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUEinkNj61G8aHE8SPVbVm051XW-qVei8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "379660960905-7s9aeknhhk4tvg2es04nvv0pd8n8j50l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

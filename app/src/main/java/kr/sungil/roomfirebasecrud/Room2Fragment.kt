@@ -15,6 +15,4 @@ class Room2Fragment : Fragment(R.layout.fragment_room2) {
 		binding = _binding
 
 	}
-
-
 }

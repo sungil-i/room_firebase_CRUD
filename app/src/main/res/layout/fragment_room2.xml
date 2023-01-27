@@ -3,7 +3,78 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	android:padding="15dp"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
 	tools:context=".Room2Fragment">
 
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/tv_title"
+		android:text="영화제목: "
+		android:textSize="20sp"
+		android:textStyle="bold"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/tv_director"
+		android:text="영화감독: "
+		android:textSize="20sp"
+		android:textStyle="bold"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/tv_title"/>
+
+	<EditText
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:id="@+id/et_title"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintStart_toEndOf="@id/tv_title"
+		app:layout_constraintEnd_toEndOf="parent"
+		android:hint="영화 제목을 입력하세용"/>
+
+	<EditText
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:id="@+id/et_directior"
+		app:layout_constraintTop_toTopOf="@id/tv_director"
+		app:layout_constraintStart_toEndOf="@id/tv_director"
+		app:layout_constraintEnd_toEndOf="parent"
+		android:hint="감독 이름을 입력하세용"/>
+
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/bt_save"
+		app:layout_constraintTop_toBottomOf="@+id/et_directior"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toStartOf="@+id/bt_cancel"
+		android:text="저장하기"/>
+
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/bt_cancel"
+		app:layout_constraintTop_toBottomOf="@+id/et_directior"
+		app:layout_constraintStart_toEndOf="@+id/bt_save"
+		app:layout_constraintEnd_toEndOf="parent"
+		android:text="취소하기"/>
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/rv_movies"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.551"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/bt_save"
+		app:layout_constraintVertical_bias="0.0"
+		tools:listitem="@layout/rv_item_monie" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

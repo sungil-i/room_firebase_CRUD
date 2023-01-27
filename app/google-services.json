@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "379660960905",
-    "firebase_url": "https://sungil-crud-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "sungil-crud",
-    "storage_bucket": "sungil-crud.appspot.com"
+    "project_number": "183342136710",
+    "firebase_url": "https://test-3abc8-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "test-3abc8",
+    "storage_bucket": "test-3abc8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:379660960905:android:bedef94db9af8947dcb258",
+        "mobilesdk_app_id": "1:183342136710:android:d540fa0fe029db35568007",
         "android_client_info": {
           "package_name": "kr.sungil.roomfirebasecrud"
         }
       },
       "oauth_client": [
         {
-          "client_id": "379660960905-7s9aeknhhk4tvg2es04nvv0pd8n8j50l.apps.googleusercontent.com",
+          "client_id": "183342136710-95j17226rremel8cn8sq26tsche2o0r1.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCUEinkNj61G8aHE8SPVbVm051XW-qVei8"
+          "current_key": "AIzaSyDqoXAG4mlOkKqB8zGrr7OKt6u2oR5Y-cI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "379660960905-7s9aeknhhk4tvg2es04nvv0pd8n8j50l.apps.googleusercontent.com",
+              "client_id": "183342136710-95j17226rremel8cn8sq26tsche2o0r1.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

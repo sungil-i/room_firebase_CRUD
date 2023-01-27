@@ -19,6 +19,10 @@ class Room1Fragment : Fragment(R.layout.fragment_room1) {
 	private lateinit var adapter: BookAdapter
 	private val bookList = mutableListOf<BookDTO>()
 
+	override fun onResume() {
+		super.onResume()
+
+	}
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
 		val _binding = FragmentRoom1Binding.bind(view)

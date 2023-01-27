@@ -1,34 +1,63 @@
 {
   "project_info": {
-    "project_number": "379660960905",
-    "firebase_url": "https://sungil-crud-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "sungil-crud",
-    "storage_bucket": "sungil-crud.appspot.com"
+    "project_number": "518843063200",
+    "firebase_url": "https://fir-demo-f6173-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "fir-demo-f6173",
+    "storage_bucket": "fir-demo-f6173.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:379660960905:android:bedef94db9af8947dcb258",
+        "mobilesdk_app_id": "1:518843063200:android:da25c46f7cb9c3cabbe2c5",
         "android_client_info": {
-          "package_name": "kr.sungil.roomfirebasecrud"
+          "package_name": "kr.sungil.roomdatabasedemo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "379660960905-7s9aeknhhk4tvg2es04nvv0pd8n8j50l.apps.googleusercontent.com",
+          "client_id": "518843063200-08a0fa7i26qv01rarmggn8k5ivvo5gsv.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCUEinkNj61G8aHE8SPVbVm051XW-qVei8"
+          "current_key": "AIzaSyBN-ktpSBinRCrs5IpoCsyL-vUb0-dVHUw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "379660960905-7s9aeknhhk4tvg2es04nvv0pd8n8j50l.apps.googleusercontent.com",
+              "client_id": "518843063200-08a0fa7i26qv01rarmggn8k5ivvo5gsv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:518843063200:android:9f130a72e24334a6bbe2c5",
+        "android_client_info": {
+          "package_name": "kr.sungil.roomfirebasecrud"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "518843063200-08a0fa7i26qv01rarmggn8k5ivvo5gsv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN-ktpSBinRCrs5IpoCsyL-vUb0-dVHUw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "518843063200-08a0fa7i26qv01rarmggn8k5ivvo5gsv.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

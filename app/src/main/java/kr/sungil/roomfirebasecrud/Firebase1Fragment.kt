@@ -23,6 +23,9 @@ class Firebase1Fragment : Fragment(R.layout.fragment_firebase1) {
 	private lateinit var adapter: BookAdapter
 	private val bookList = mutableListOf<BookDTO>()
 
+	override fun onResume() {
+		super.onResume()
+	}
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
 		val _binding = FragmentFirebase1Binding.bind(view)

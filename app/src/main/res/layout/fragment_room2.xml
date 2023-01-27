@@ -3,7 +3,77 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
 	tools:context=".Room2Fragment">
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/tv_title"
+		android:text="영화제목 : "
+		android:textSize="20sp"
+		android:textStyle="bold"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/tv_director"
+		android:text="영화감독 : "
+		android:textSize="20sp"
+		android:textStyle="bold"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/tv_title"/>
+
+	<EditText
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintStart_toEndOf="@id/tv_title"
+		app:layout_constraintEnd_toEndOf="parent"
+		android:hint="제목 입력"
+		android:id="@+id/et_title"/>
+
+	<EditText
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:id="@+id/et_director"
+		app:layout_constraintTop_toTopOf="@id/tv_director"
+		app:layout_constraintStart_toEndOf="@id/tv_director"
+		app:layout_constraintEnd_toEndOf="parent"
+		android:hint="이름 입력"/>
+
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/bt_save"
+		android:text="저장하기"
+		app:layout_constraintEnd_toStartOf="@id/bt_cancel"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/et_director"/>
+
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/bt_cancel"
+		android:text="취소하기"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@id/bt_save"
+		app:layout_constraintTop_toBottomOf="@id/et_director"/>
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:id="@+id/tv_movies"
+		app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+		android:orientation="vertical"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/bt_save"
+		app:layout_constraintBottom_toBottomOf="parent"
+		tools:listitem="@layout/rv_item_movie"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

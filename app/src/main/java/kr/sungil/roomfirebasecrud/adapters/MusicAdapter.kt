@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import kr.sungil.roomfirebasecrud.databinding.RvItemMusicBinding
 import kr.sungil.roomfirebasecrud.models.MusicDTO
 
-class MusicAdapter : ListAdapter<MusicDTO, MusicAdapter.ViewHolder>(diffUtil) {
+class MusicAdapter(
+	private val onItemClicked: (MusicDTO) -> Unit,
+	private val deleteItem: (MusicDTO) -> Unit
+) : ListAdapter<MusicDTO, MusicAdapter.ViewHolder>(diffUtil) {
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 		return ViewHolder(
@@ -29,7 +32,13 @@ class MusicAdapter : ListAdapter<MusicDTO, MusicAdapter.ViewHolder>(diffUtil) {
 		private val binding: RvItemMusicBinding
 	) : RecyclerView.ViewHolder(binding.root) {
 		fun bind(music: MusicDTO) {
-
+			binding.apply {
+				tvIdx.text = music.idx.toString()
+				tvTitle.text = music.title
+				tvSinger.text = music.singer
+				ivDelete.setOnClickListener { deleteItem(music) }
+				root.setOnClickListener { onItemClicked(music) }
+			}
 		}
 	}
 

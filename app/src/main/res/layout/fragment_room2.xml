@@ -21,7 +21,7 @@
 		/>
 
 	<TextView
-		android:id="@+id/tv_director"
+		android:id="@+id/tv_singer"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_marginTop="20dp"
@@ -44,14 +44,14 @@
 		/>
 
 	<EditText
-		android:id="@+id/et_director"
+		android:id="@+id/et_singer"
 		android:layout_marginTop="-10dp"
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
 		android:hint="감독 이름을 입력하세요"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toEndOf="@+id/tv_director"
-		app:layout_constraintTop_toTopOf="@+id/tv_director"
+		app:layout_constraintStart_toEndOf="@+id/tv_singer"
+		app:layout_constraintTop_toTopOf="@+id/tv_singer"
 		/>
 
 	<Button
@@ -62,7 +62,7 @@
 		android:text="저장하기"
 		app:layout_constraintEnd_toStartOf="@+id/bt_cancel"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/et_director"
+		app:layout_constraintTop_toBottomOf="@+id/et_singer"
 		/>
 
 	<Button
@@ -73,7 +73,7 @@
 		android:text="취소하기"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toEndOf="@+id/bt_save"
-		app:layout_constraintTop_toBottomOf="@+id/et_director"
+		app:layout_constraintTop_toBottomOf="@+id/et_singer"
 		/>
 
 	<androidx.recyclerview.widget.RecyclerView

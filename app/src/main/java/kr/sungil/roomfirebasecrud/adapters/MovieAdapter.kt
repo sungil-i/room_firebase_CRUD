@@ -6,13 +6,14 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import kr.sungil.roomfirebasecrud.databinding.RvItemBookBinding
+import kr.sungil.roomfirebasecrud.databinding.RvItemMovieBinding
 import kr.sungil.roomfirebasecrud.models.MovieDTO
 
 class MovieAdapter : ListAdapter<MovieDTO, MovieAdapter.ViewHolder>(diffUtil) {
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 		return ViewHolder(
-			RvItemBookBinding.inflate(
+			RvItemMovieBinding.inflate(
 				LayoutInflater.from(parent.context),
 				parent,
 				false
@@ -26,13 +27,13 @@ class MovieAdapter : ListAdapter<MovieDTO, MovieAdapter.ViewHolder>(diffUtil) {
 
 	// inner class
 	inner class ViewHolder(
-		private val binding: RvItemBookBinding
+		private val binding: RvItemMovieBinding
 	) : RecyclerView.ViewHolder(binding.root) {
 		fun bind(movie: MovieDTO) {
 			binding.apply {
-				tvIdx.text = movie.idx.toString()
-				tvTitle.text = movie.title
-				tvAuthor.text = movie.author
+				tvMvIdx.text = movie.idx.toString()
+				tvMvTitle.text = movie.title
+				tvMvDirecter.text = movie.director
 			}
 		}
 	}

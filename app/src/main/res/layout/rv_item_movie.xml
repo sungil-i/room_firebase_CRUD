@@ -14,7 +14,7 @@
         android:padding="10dp">
 
         <TextView
-            android:id="@+id/tv_idx"
+            android:id="@+id/tv_mv_idx"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="50sp"
@@ -23,25 +23,25 @@
             tools:text="1" />
 
         <TextView
-            android:id="@+id/tv_title"
+            android:id="@+id/tv_mv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:textSize="25dp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/tv_idx"
+            app:layout_constraintStart_toEndOf="@id/tv_mv_idx"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Test01" />
 
         <TextView
-            android:layout_marginTop="5dp"
-            android:id="@+id/tv_directer"
+            android:id="@+id/tv_mv_directer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
             android:textSize="20dp"
-            app:layout_constraintStart_toEndOf="@id/tv_idx"
-            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintStart_toEndOf="@id/tv_mv_idx"
+            app:layout_constraintTop_toBottomOf="@id/tv_mv_title"
             tools:text="Test01" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

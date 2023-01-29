@@ -1,10 +1,9 @@
 package kr.sungil.roomfirebasecrud
 
-import kr.sungil.roomfirebasecrud.models.BookDTO
 import kr.sungil.roomfirebasecrud.models.MovieDTO
 
 object DatasMovie {
-	val bookItems = listOf(
+	val movieItems = listOf(
 		MovieDTO(1, "영화제목 1", "감독 1"),
 		MovieDTO(2, "영화제목 1", "감독 2"),
 		MovieDTO(3, "영화제목 2", "감독 3"),

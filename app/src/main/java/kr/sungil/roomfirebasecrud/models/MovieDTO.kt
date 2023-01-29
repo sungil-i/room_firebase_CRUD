@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 data class MovieDTO(
 	@PrimaryKey val idx: Int,
 	@ColumnInfo(name = "title") val title: String, // 영화 제목
-	@ColumnInfo(name = "director") val author: String // 감독
+	@ColumnInfo(name = "director") val director: String // 감독
 ) {
 	constructor() : this(0, "", "")
 }

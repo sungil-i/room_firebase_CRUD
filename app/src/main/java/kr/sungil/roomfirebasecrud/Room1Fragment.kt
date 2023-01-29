@@ -2,10 +2,7 @@ package kr.sungil.roomfirebasecrud
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.annotation.UiThread
 import kr.sungil.roomfirebasecrud.Datas.bookItems
 import kr.sungil.roomfirebasecrud.adapters.BookAdapter
 import kr.sungil.roomfirebasecrud.databinding.FragmentRoom1Binding

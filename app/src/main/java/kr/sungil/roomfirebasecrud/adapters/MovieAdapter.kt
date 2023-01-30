@@ -9,7 +9,7 @@ import kr.sungil.roomfirebasecrud.databinding.RvItemBookBinding
 import kr.sungil.roomfirebasecrud.databinding.RvItemMovieBinding
 import kr.sungil.roomfirebasecrud.models.MovieDTO
 
-class MovieAdapter : ListAdapter<MovieDTO, MovieAdapter.ViewHolder>(diffUtil) {
+class MovieAdapter(onItemClick: () -> Unit) : ListAdapter<MovieDTO, MovieAdapter.ViewHolder>(diffUtil) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(

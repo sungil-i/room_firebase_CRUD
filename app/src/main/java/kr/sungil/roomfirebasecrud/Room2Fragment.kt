@@ -54,13 +54,13 @@ class Room2Fragment : Fragment(R.layout.fragment_room2) {
             btCancel.isEnabled = false
             btSave.setOnClickListener {
                 val movie = MovieDTO(
-                    adapter.itemCount + 1,
+                    movieList.size + 1,
                     etTitle.text.toString(),
                     etDirector.text.toString()
                 )
                 Thread {
                     db.movieDao().insertMovie(movie)
-                }
+                }.start()
                 readData()
             }
         }
@@ -69,6 +69,7 @@ class Room2Fragment : Fragment(R.layout.fragment_room2) {
     private fun readData() {
         var movies: List<MovieDTO>
         Thread {
+            movieList.clear()
             movies = db.movieDao().getAllMovies()
             for (m in movies) {
                 movieList.add(m)
@@ -80,8 +81,8 @@ class Room2Fragment : Fragment(R.layout.fragment_room2) {
     private fun initRecyclerView() {
         binding!!.apply {
             adapter = MovieAdapter(onItemClick = {})
-            rvMovies.adapter
             adapter.submitList(movieList)
+            rvMovies.adapter
         }
     }
 }

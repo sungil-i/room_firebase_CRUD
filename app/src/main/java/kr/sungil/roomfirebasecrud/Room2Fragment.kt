@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import kr.sungil.roomfirebasecrud.adapters.MovieAdapter
 import kr.sungil.roomfirebasecrud.databinding.FragmentRoom2Binding
+import kr.sungil.roomfirebasecrud.models.MovieDTO
 import kr.sungil.roomfirebasecrud.room.AppDatabase
 import kr.sungil.roomfirebasecrud.room.getAppDatabase
 
@@ -15,6 +16,7 @@ class Room2Fragment : Fragment(R.layout.fragment_room2) {
 	private var binding: FragmentRoom2Binding? = null
 	private lateinit var db: AppDatabase
 	private lateinit var adapter: MovieAdapter
+	private val movieList = mutableListOf<MovieDTO>()
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)

@@ -10,6 +10,4 @@ data class MovieDTO(
     @PrimaryKey val idx: Int,
     @ColumnInfo(name = "title") val title: String, // 책제목
     @ColumnInfo(name = "author") val author: String // 지은이
-) {
-    constructor() : this(0, "", "")
-}
+)

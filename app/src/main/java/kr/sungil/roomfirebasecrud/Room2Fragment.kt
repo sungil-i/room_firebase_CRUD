@@ -26,6 +26,7 @@ class Room2Fragment : Fragment(R.layout.fragment_room2) {
 		initEditText()
 		initButton()
 		initRecyclerView()
+		readData()
 
 		initEditText()
 		binding!!.apply {
@@ -60,20 +61,23 @@ class Room2Fragment : Fragment(R.layout.fragment_room2) {
 					etTitle.text.toString(),
 					etDirector.text.toString()
 				)
-				db.movieDao().insertMovie(movie)
+				Thread{
+					db.movieDao().insertMovie(movie)
+				}
 				readData()
 			}
 		}
 	}
 
 	private fun readData() {
-		val movies = db.movieDao().getAllMovies()
-		if (movies.size > 0) {
+		var movies: List<MovieDTO>
+		Thread{
+			movies = db.movieDao().getAllMovies()
 			for (m in movies) {
 				movieList.add(m)
 			}
-			adapter.notifyDataSetChanged()
-		}
+		}.start()
+		adapter.notifyDataSetChanged()
 	}
 
 	private fun initEditText() {

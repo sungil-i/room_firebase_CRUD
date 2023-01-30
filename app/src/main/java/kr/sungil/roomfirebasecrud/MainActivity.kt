@@ -1,16 +1,15 @@
-package kr.sungil.roomfirebasecrud
-
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import kr.sungil.roomfirebasecrud.Firebase1Fragment
+import kr.sungil.roomfirebasecrud.Firebase2Fragment
+import kr.sungil.roomfirebasecrud.R
+import kr.sungil.roomfirebasecrud.Room1Fragment
 import kr.sungil.roomfirebasecrud.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 	private lateinit var binding: ActivityMainBinding
 
-	override fun onResume() {
-		super.onResume()
-	}
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)

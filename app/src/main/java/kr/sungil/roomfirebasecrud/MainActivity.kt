@@ -8,9 +8,6 @@ import kr.sungil.roomfirebasecrud.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 	private lateinit var binding: ActivityMainBinding
 
-	override fun onResume() {
-		super.onResume()
-	}
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)

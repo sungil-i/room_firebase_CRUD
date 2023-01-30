@@ -57,6 +57,7 @@ class Room2Fragment : Fragment(R.layout.fragment_room2) {
 		binding!!.apply {
 			adapter = MovieAdapter(onItemClick = {})
 			rvMovies.adapter
+			adapter.submitList(movieList)
 		}
 	}
 }

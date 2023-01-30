@@ -1,9 +1,6 @@
 package kr.sungil.roomfirebasecrud.room
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import kr.sungil.roomfirebasecrud.models.MovieDTO
 
 @Dao
@@ -16,4 +13,8 @@ interface MovieDAO {
 
 	@Insert(onConflict = OnConflictStrategy.REPLACE)
 	fun insertMovie(movie: MovieDTO)
+	@Update
+	fun updateMovie(movie: MovieDTO)
+	@Delete
+	fun deleteMovie(movie: MovieDTO)
 }

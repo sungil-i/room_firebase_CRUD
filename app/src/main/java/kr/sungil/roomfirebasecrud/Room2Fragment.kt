@@ -30,7 +30,7 @@ class Room2Fragment : Fragment(R.layout.fragment_room2) {
         initEditText()
         initButton()
         initRecyclerView()
-		readData()
+        readData()
     }
 
     private fun initEditText() {
@@ -58,10 +58,10 @@ class Room2Fragment : Fragment(R.layout.fragment_room2) {
                     etTitle.text.toString(),
                     etDirector.text.toString()
                 )
-				Thread {
-					db.movieDao().insertMovie(movie)
-				}
-				readData()
+                Thread {
+                    db.movieDao().insertMovie(movie)
+                }
+                readData()
             }
         }
     }

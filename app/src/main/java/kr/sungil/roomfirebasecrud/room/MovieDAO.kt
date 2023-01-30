@@ -6,7 +6,7 @@ import kr.sungil.roomfirebasecrud.models.MovieDTO
 @Dao
 interface MovieDAO {
     @Query("select * from movie_table")
-    fun getAllMovies(): List<MovieDAO>
+    fun getAllMovies(): List<MovieDTO>
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertMovie(movie: MovieDTO)
     @Update

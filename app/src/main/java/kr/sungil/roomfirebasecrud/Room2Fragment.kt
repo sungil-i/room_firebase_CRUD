@@ -14,7 +14,7 @@ import kr.sungil.roomfirebasecrud.room.getAppDatabase
 class Room2Fragment : Fragment(R.layout.fragment_room2) {
 	private var binding: FragmentRoom2Binding? = null
 	private lateinit var db: AppDatabase
-	private lateinit var adpater: MovieAdapter
+	private lateinit var adapter: MovieAdapter
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
@@ -53,7 +53,7 @@ class Room2Fragment : Fragment(R.layout.fragment_room2) {
 
 	private fun initRecyclerView() {
 		binding!!.apply {
-
+			adapter = MovieAdapter(onItemClick = {})
 			rvMovies.adapter
 		}
 	}

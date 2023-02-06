@@ -1,59 +1,88 @@
 package kr.sungil.roomfirebasecrud
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.addTextChangedListener
+import kr.sungil.roomfirebasecrud.adapters.MovieAdapter
+import kr.sungil.roomfirebasecrud.databinding.FragmentRoom2Binding
+import kr.sungil.roomfirebasecrud.models.MovieDTO
+import kr.sungil.roomfirebasecrud.room.AppDatabase
+import kr.sungil.roomfirebasecrud.room.getAppDatabase
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class Room2Fragment : Fragment(R.layout.fragment_room2) {
+    private var binding: FragmentRoom2Binding? = null
+    private lateinit var db: AppDatabase
+    private lateinit var adapter: MovieAdapter
+    private val movieList = mutableListOf<MovieDTO>()
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Room2Fragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class Room2Fragment : Fragment() {
-	// TODO: Rename and change types of parameters
-	private var param1: String? = null
-	private var param2: String? = null
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val _binding = FragmentRoom2Binding.bind(view)
+        binding = _binding
 
-	override fun onCreate(savedInstanceState: Bundle?) {
-		super.onCreate(savedInstanceState)
-		arguments?.let {
-			param1 = it.getString(ARG_PARAM1)
-			param2 = it.getString(ARG_PARAM2)
-		}
-	}
+        // Room Database 초기화
+        db = context?.let { getAppDatabase(it) }!!
 
-	override fun onCreateView(
-		inflater: LayoutInflater, container: ViewGroup?,
-		savedInstanceState: Bundle?
-	): View? {
-		// Inflate the layout for this fragment
-		return inflater.inflate(R.layout.fragment_room2, container, false)
-	}
+        initEditText()
+        initButton()
+        initRecyclerView()
+        readData()
+    }
 
-	companion object {
-		/**
-		 * Use this factory method to create a new instance of
-		 * this fragment using the provided parameters.
-		 *
-		 * @param param1 Parameter 1.
-		 * @param param2 Parameter 2.
-		 * @return A new instance of fragment Room2Fragment.
-		 */
-		// TODO: Rename and change types and number of parameters
-		@JvmStatic
-		fun newInstance(param1: String, param2: String) =
-			Room2Fragment().apply {
-				arguments = Bundle().apply {
-					putString(ARG_PARAM1, param1)
-					putString(ARG_PARAM2, param2)
-				}
-			}
-	}
+    private fun initEditText() {
+        binding!!.apply {
+            etTitle.addTextChangedListener {
+                val isOk = etTitle.text.isNotEmpty() && etDirector.text.isNotEmpty()
+                btSave.isEnabled = isOk
+                btCancel.isEnabled = isOk
+            }
+            etDirector.addTextChangedListener {
+                val isOk = etTitle.text.isNotEmpty() && etDirector.text.isNotEmpty()
+                btSave.isEnabled = isOk
+                btCancel.isEnabled = isOk
+            }
+        }
+    }
+
+    private fun initButton() {
+        binding!!.apply {
+            btSave.isEnabled = false
+            btCancel.isEnabled = false
+            btSave.setOnClickListener {
+                val movie = MovieDTO(
+                    movieList.size + 1,
+                    etTitle.text.toString(),
+                    etDirector.text.toString()
+                )
+                Thread {
+                    db.movieDao().insertMovie(movie)
+                }.start()
+                readData()
+            }
+        }
+    }
+
+    private fun readData() {
+        var movies: List<MovieDTO>
+        Thread {
+            movieList.clear()
+            movies = db.movieDao().getAllMovies()
+            for (m in movies) {
+                movieList.add(m)
+            }
+        }.start()
+        adapter.notifyDataSetChanged()
+    }
+
+    private fun initRecyclerView() {
+        binding!!.apply {
+            adapter = MovieAdapter(onItemClick = {})
+            adapter.submitList(movieList)
+            rvMovies.adapter
+        }
+    }
 }
